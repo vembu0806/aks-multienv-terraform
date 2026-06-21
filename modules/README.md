@@ -12,7 +12,6 @@ Reusable, composable modules. Each is environment-agnostic — all environment-s
 | [`gitops`](gitops) | ArgoCD install + App-of-Apps bootstrap via Helm |
 
 ## Conventions
-
 - Every variable is typed and documented.
 - Every module exposes only the outputs callers need.
 - No provider or backend blocks inside modules — those live in `environments/`.
