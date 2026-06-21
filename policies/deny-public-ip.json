@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "displayName": "Deny public IPs on network interfaces",
+    "policyType": "Custom",
+    "mode": "All",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          { "field": "type", "equals": "Microsoft.Network/networkInterfaces" },
+          { "field": "Microsoft.Network/networkInterfaces/ipConfigurations[*].publicIpAddress.id", "exists": "true" }
+        ]
+      },
+      "then": { "effect": "deny" }
+    }
+  }
+}

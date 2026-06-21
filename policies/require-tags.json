@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "displayName": "Require environment and managed_by tags",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "policyRule": {
+      "if": {
+        "anyOf": [
+          { "field": "tags['environment']", "exists": "false" },
+          { "field": "tags['managed_by']", "exists": "false" }
+        ]
+      },
+      "then": { "effect": "deny" }
+    }
+  }
+}
